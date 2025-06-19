@@ -1,0 +1,30 @@
+<?php
+namespace App\Controller;
+
+use App\Model\Usuario;
+
+class UsuarioController {
+    public function exibirFormulario() {
+        include 'App/View/formulario_usuario.php';
+    }
+
+    public function cadastrarUsuario() {
+        require 'App/config.php';
+        require_once 'App/Model/Usuario.php';
+
+        $usuario = new Usuario($conn);
+        $usuario->cadastrar($_POST['nome'], $_POST['email']);
+
+        $this->listarUsuarios();
+    }
+
+    public function listarUsuarios() {
+        require 'App/config.php';
+        require_once 'App/Model/Usuario.php';
+
+        $usuario = new Usuario($conn);
+        $lista = $usuario->listar();
+
+        include 'App/View/lista_usuarios.php';
+    }
+}
