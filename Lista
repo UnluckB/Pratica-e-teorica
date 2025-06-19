@@ -1,0 +1,6 @@
+<h2>Lista de Usuários</h2>
+<ul>
+    <?php foreach ($lista as $usuario): ?>
+        <li><?= htmlspecialchars($usuario['nome']) ?> - <?= htmlspecialchars($usuario['email']) ?></li>
+    <?php endforeach; ?>
+</ul>
