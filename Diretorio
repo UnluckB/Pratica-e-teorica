@@ -1,0 +1,15 @@
+/App
+│
+├── /Model
+│   └── Usuario.php
+│
+├── /View
+│   ├── formulario_usuario.php
+│   └── lista_usuarios.php
+│
+├── /Controller
+│   └── UsuarioController.php
+│
+└── config.php
+│
+index.php
